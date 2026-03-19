@@ -1,0 +1,20 @@
+nodeName: interlink-htcondor
+
+interlink:
+  enabled: true
+  address: http://localhost
+  port: 3000
+  pluginEndpoint:
+    url: "http://192.108.47.241"
+    port: "8000"
+  logging:
+    verboseLogging: true
+
+plugin:
+  enabled: false
+
+virtualNode:
+  resources:
+    CPUs: 4
+    memGiB: 16
+    pods: 50
