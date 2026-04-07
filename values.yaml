@@ -2,7 +2,8 @@ nodeName: interlink-htcondor
 
 interlink:
   enabled: true
-  address: http://localhost
+  image: ghcr.io/interlink-hq/interlink/interlink:0.6.1-pre5
+  address: http://0.0.0.0
   port: 3000
   pluginEndpoint:
     url: "http://192.108.47.241"
@@ -14,6 +15,7 @@ plugin:
   enabled: false
 
 virtualNode:
+  image: ghcr.io/interlink-hq/interlink/virtual-kubelet-inttw:0.6.1-pre5
   resources:
     CPUs: 4
     memGiB: 16
