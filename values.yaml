@@ -7,7 +7,7 @@ interlink:
   port: 3000
   pluginEndpoint:
     url: "http://192.108.47.241"
-    port: "8000"
+    port: "8080"
   logging:
     verboseLogging: true
 
@@ -20,3 +20,20 @@ virtualNode:
     CPUs: 4
     memGiB: 16
     pods: 50
+    accelerators:
+      - resourceType: nvidia.com/gpu
+        model: a100
+        available: 3
+  network:
+    # Cluster network configuration
+    serviceCIDR: "10.96.0.0/12"       
+    podCIDRCluster: "10.244.0.0/24"   
+    dnsServiceIP: "10.96.0.10"        
+    keepaliveSecs: 25
+    # Tunnel configuration
+    enableTunnel: true
+    tunnelImage: "ghcr.io/erebe/wstunnel:latest"
+    wildcardDNS: "10.104.187.12.nip.io"
+    wstunnelTemplatePath: "/etc/wstunnel/traefik-wstunnel-template.yaml"  
+
+
