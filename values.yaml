@@ -33,7 +33,5 @@ virtualNode:
     # Tunnel configuration
     enableTunnel: true
     tunnelImage: "ghcr.io/erebe/wstunnel:latest"
-    wildcardDNS: "10.104.187.12.nip.io"
-    wstunnelTemplatePath: "/etc/wstunnel/traefik-wstunnel-template.yaml"  
-
-
+    wildcardDNS: "192.108.47.241.nip.io"
+    
