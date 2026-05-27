@@ -2,7 +2,7 @@ nodeName: interlink-htcondor
 
 interlink:
   enabled: true
-  image: ghcr.io/interlink-hq/interlink/interlink:0.6.1-pre5
+  image: ghcr.io/interlink-hq/interlink/interlink:0.6.2-pre4
   address: http://0.0.0.0
   port: 3000
   pluginEndpoint:
@@ -15,7 +15,7 @@ plugin:
   enabled: false
 
 virtualNode:
-  image: ghcr.io/interlink-hq/interlink/virtual-kubelet-inttw:0.6.1-pre5
+  image: ghcr.io/interlink-hq/interlink/virtual-kubelet-inttw:0.6.2-pre4
   resources:
     CPUs: 4
     memGiB: 16
@@ -34,4 +34,4 @@ virtualNode:
     enableTunnel: true
     tunnelImage: "ghcr.io/erebe/wstunnel:latest"
     wildcardDNS: "192.108.47.241.nip.io"
-    
+    wstunnelCommand: "curl -L https://github.com/erebe/wstunnel/releases/download/v10.4.4/wstunnel_10.4.4_linux_amd64.tar.gz -o wstunnel.tar.gz && tar -xzvf wstunnel.tar.gz && chmod +x wstunnel && ./wstunnel client --http-upgrade-path-prefix %s %s ws://%s:32279 &\n"
